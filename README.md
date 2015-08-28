@@ -6,6 +6,6 @@ It is a web application.
 
 #### Web Application framework: Apache Struts, Spring framework
 #### Application Server: Apache Tomcat
-#### Main Language : Java
+#### Main Language : Java (Server Side), JSP, HTML, CSS, JavaScript, Ajax, jQuery (Client side)
 #### Database: MySQL 
 #### Search server: Apache Solr
