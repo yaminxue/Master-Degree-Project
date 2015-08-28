@@ -1,0 +1,154 @@
+h1{
+	font-family:courier;
+	
+}
+#header1 {
+	background-color: #99CC00;
+	color: black;
+	/* text-align: left; */
+	padding: 5px;
+	width: 280px;
+}
+
+#header {
+	margin-left: 280px;
+	background-color: #99CC00;
+	color: white;
+	/* text-align: left; */
+	padding: 5px;
+}
+
+#left {
+	line-height: 30px;
+	width: 530px;
+	float: left;
+	padding: 5px;
+}
+
+
+#resultset {
+	width: 500px;
+}
+
+#right {
+	line-height: 30px;
+	width: 600px;
+	float: left;
+	padding: 5px;
+}
+
+#searchbuttondiv  {
+	margin-left: 250px;
+	clear: both;
+}
+
+#searchbutton {
+	width: 100px;
+	height: 30px;
+	background-color: #F8F8F8 ;
+}
+
+#andquerydiv{
+	float: left;
+	width: 300px;
+}
+#orquerydiv {
+	float: left;
+}
+
+#r-down{
+	text-align: justify;
+	padding: 15px;
+	border: 1px solid #eeeeee;
+	background-color: #f5f5f5;
+}
+#r-down1{
+	text-align: justify;
+	padding: 15px;
+	border: 1px solid #eeeeee;
+	background-color: #f5f5f5;
+}
+
+#tagstyle {
+	text-decoration: none;
+}
+
+#tagstyle:link {
+	color: #0063DC;
+}
+
+#tagstyle:visited {
+	color: #1057ae;
+}
+#tagstyle:hover {
+	color: #FFFFFF;
+	background: #0063DC;
+}
+
+#tagstyle:active { 
+	color: #FFFFFF;
+	background: #0259C4;
+}
+
+#linkstyle {
+	color: white;
+	text-decoration: none;
+}
+
+#linkstyle:link {
+	color: #0063DC;
+}
+
+#linkstyle:visited {
+	color: white;
+}
+#linkstyle:hover {
+	color: #99CC00;
+	background: white;
+}
+
+#linkstyle:active { 
+	color: #FFFFFF;
+	background: #0259C4;
+}
+
+textarea{
+	width: 250px;
+} 
+
+#savebutton {
+	width: 160px;
+	margin-left: 10px;
+	color: #009900;
+	font-weight: bold;
+}
+#deletebutton {
+	width: 160px;
+	margin-left: 10px;
+	color: #CC3300;
+	font-weight: bold;
+}
+ 
+/* 
+.text-core .text-tag .text-button {
+    padding-left : 10px !important;
+	padding-right: 10px;
+}
+ */
+/* .text-core .text-wrap .text-tags .text-tag .text-button {
+	padding: 10px;
+} */
+
+/* .text-core .text-tag .custom-edit {
+    display    : block;
+    width      : 16px;
+    height     : 16px;
+    background : url(/images/tag_blue.png);
+    position   : absolute;
+    left       : 2px;
+    top        : 0px;
+}
+
+.text-core .text-tag .custom-edit:hover {
+    background : url(/images/tag_blue_edit.png);
+} */

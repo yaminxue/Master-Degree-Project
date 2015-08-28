@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<constant name="struts.devMode" value="false"></constant>
+
+	<constant name="struts.custom.i18n.resources" value="message" />
+
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+	<package name="default" extends="json-default">
+
+	    <action name="login" class="login">
+		    <result name="success" type="redirect">/home.jsp</result>
+        	<result name="error">/login.jsp</result>
+		</action>
+		
+		<action name="logout" class="strutsAction.LogoutAction">
+		    <result name="success" type="redirect">/home.jsp</result>	    
+		    </action>
+		    
+		<action name="Query" class="Query">
+		</action>
+
+		<action name="getData" class="getData">
+		</action>
+		
+		<action name="getFilecontent" class="getFilecontent">
+		</action>
+		
+		<action name="getParticularcontent" class="getParticularcontent">
+		</action>
+		
+		<action name="getSuggestions" class="getSuggestions"></action>
+		
+		<action name="getDepoList" class="getDepoList"></action>
+		
+		<action name="register" class="register">
+		    <result name="success" type="redirect">/home.jsp</result>
+        	<result name="error">/register.jsp</result>
+		</action>
+		
+		<action name="saveDoc" class="saveDoc"></action>
+		
+		<action name="deleteDoc" class="deleteDoc"></action>
+		
+		<action name="getSavedDoc" class="getSavedDoc"></action>
+		
+		<action name="checkFileStatus" class="checkFileStatus"></action>
+		
+		<action name="getRecommendDoc" class="getRecommendDoc"></action>
+		
+		
+	</package>
+
+
+</struts>

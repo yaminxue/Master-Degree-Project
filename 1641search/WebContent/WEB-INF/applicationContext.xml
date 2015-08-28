@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	<!-- Data Source -->
+ <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://localhost:3306/1641_deposition"/>
+      <property name="username" value="root"/>
+      <property name="password" value=""/>
+   </bean>
+ 
+ <!-- Enable Annotation based Declarative Transaction Management -->
+   <tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" />
+   
+	  <!-- Creating TransactionManager Bean, since JDBC we are creating of type 
+        DataSourceTransactionManager -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+	
+	<bean id="deposition" class="dao.DepositionImpl">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	
+
+	<!-- servicce -->
+	<bean id="queryService" class="service.QueryServiceImpl">
+	  <property name="deposition">
+			<ref bean="deposition" />
+		</property>  
+	</bean>
+	
+	<bean id="suggestionService" class="service.SuggestionServiceImpl">
+	  <property name="deposition">
+			<ref bean="deposition" />
+		</property>  
+	</bean>
+
+	<!-- action  -->
+	<bean id="Query" class="strutsAction.QueryAction">
+		  <property name="queryService">
+			<ref bean="queryService" />
+		</property> 
+	</bean>
+	
+	<bean id="getData" class="strutsAction.GetDataAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean> 
+	
+	
+	<bean id="getFilecontent" class="strutsAction.GetFileContentAction">
+	</bean>
+	
+	<bean id="getParticularcontent" class="strutsAction.GetParticularContentAction">
+	</bean>
+	
+	<bean id="getSuggestions" class="strutsAction.GetSuggestionsAction">
+	    <property name="suggestionService">
+			<ref bean="suggestionService" />
+		</property>
+	</bean>	
+	
+	<bean id="getRecommendDoc" class="strutsAction.GetRecommendDocAction">
+	    <property name="suggestionService">
+			<ref bean="suggestionService" />
+		</property>
+	</bean>
+	
+	
+	<bean id="getDepoList" class="strutsAction.GetDepoListAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean> 
+	
+		<bean id="login" class="strutsAction.LoginAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean> 
+	
+		
+			<bean id="register" class="strutsAction.RegisterAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean> 
+	
+			<bean id="saveDoc" class="strutsAction.SaveDocAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean>
+	
+			<bean id="deleteDoc" class="strutsAction.DeleteDocAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean>
+	
+			<bean id="getSavedDoc" class="strutsAction.GetSavedDocAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean>
+	
+				<bean id="checkFileStatus" class="strutsAction.CheckFileStatusAction">
+		<property name="deposition">
+			<ref bean="deposition" />
+		</property>
+	</bean>
+	
+	
+		
+		
+	
+</beans> 
